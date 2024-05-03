@@ -30,6 +30,7 @@ then
 				link="https://github.com/gitleaks/gitleaks/releases/download/v${version}/gitleaks_${version}_windows_x64.zip"
 				echo ${link}
 				curl -L ${link} > gitleaks.zip
+				mkdir gitleaks
 				unzip gitleaks.zip -d 'gitleaks'
 				mv 'gitleaks\gitleaks.exe' 'C:\MinGW\bin\'
 				rm -rf gitleaks/
