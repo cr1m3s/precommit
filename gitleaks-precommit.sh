@@ -17,21 +17,24 @@ then
     echo "Installing gitleaks"
 		echo $OSTYPE
 		case "${OSTYPE}" in
-			"linux-gnu" | "cygwin" | "msys" | "freebsd")
+			"linux-gnu" | "freebsd")
 				git clone https://github.com/gitleaks/gitleaks.git
 				cd gitleaks
 				make build
 				cp  gitleaks "${HOME}/.local/bin/"
 				;;
-			"darwin")
-				brew install gitleaks
-				;;
-			*)
+			"cygwin" | "msys")
 				version=$(curl -s https://github.com/gitleaks/gitleaks/releases | grep _checksums.txt | cut -d "_" -f 2 | head -1)
 				link="https://github.com/gitleaks/gitleaks/releases/download/v${version}/gitleaks_${version}_windows_x64.zip"
 				echo ${link}
 				curl -O ${link}
-				tar -xf gitleaks_${version}_windows_x64.zip
+				tar -xf gitleaks_${version}_windows_x64.zip "C:\Program Files\gitleaks.exe"
+			"darwin")
+				brew install gitleaks
+				;;
+			*)
+				echo "Unsupported OS version"
+				exit(1)
 				;;
 		esac
 else
