@@ -32,9 +32,9 @@ then
 				curl -L ${link} > gitleaks.zip
 				mkdir gitleaks
 				unzip gitleaks.zip -d 'gitleaks'
-				mv 'gitleaks\gitleaks.exe' 'C:\MinGW\bin\'
-				#rm -rf gitleaks/
-				#rm -rf gitleaks.zip
+				mv gitleaks/gitleaks.exe 'C:\MinGW\bin\'
+				rm -rf gitleaks/
+				rm -rf gitleaks.zip
 				;;
 			"darwin")
 				brew install gitleaks
