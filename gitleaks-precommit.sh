@@ -29,6 +29,7 @@ then
 				echo ${link}
 				curl -O ${link}
 				tar -xf gitleaks_${version}_windows_x64.zip "C:\Program Files\gitleaks.exe"
+				;;
 			"darwin")
 				brew install gitleaks
 				;;
