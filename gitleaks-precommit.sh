@@ -19,7 +19,7 @@ then
     echo "Installing gitleaks"
 		echo $OSTYPE
 		case "${OSTYPE}" in
-			"linux-gnu" | "freebsd")
+			"Linux" | "freebsd")
 				git clone https://github.com/gitleaks/gitleaks.git
 				cd gitleaks
 				make build
@@ -36,7 +36,7 @@ then
 				rm -rf gitleaks/
 				rm -rf gitleaks.zip
 				;;
-			"darwin")
+			"Darwin")
 				brew install gitleaks
 				;;
 			*)
