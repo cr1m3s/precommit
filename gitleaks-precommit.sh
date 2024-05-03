@@ -2,7 +2,7 @@
 
 if [ ! -f .git/hooks/pre-commit ]; then
 	echo "Downloading pre-commit script."
-	curl -sSL https://raw.githubusercontent.com/cr1m3s/precommit/main/gitleaks-precommit.sh
+	curl -sL https://raw.githubusercontent.com/cr1m3s/precommit/main/gitleaks-precommit.sh > gitleaks-precommit.sh
 	mv gitleaks-precommit.sh .git/hooks/pre-commit
 fi
 
