@@ -6,8 +6,10 @@ Installation:
 
 Execution will create pre-commit script in .git/hooks/ folder.
 
-Supposed to work on linux, macOS and Windows.
-Tested only for linux (requires curl, make, go).
+Supposed to work on Linux, macOS and Windows. Tested on Debian and Windows11.
+Dependencies:
+* Linux - curl, make, go
+* Windows - [MinGW](https://www.mingw-w64.org/) (git-bash) or [Cygwin](https://www.cygwin.com/)
 
 Example of instalation and check:
 ![instalation and check](./img/gitleaks.gif)

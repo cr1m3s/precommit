@@ -6,9 +6,9 @@ if [ ! -f .git/hooks/pre-commit ]; then
 	mv gitleaks-precommit.sh .git/hooks/pre-commit
 fi
 
-if [ ! $( git config --local hooks.enabled ) ]; then
-	echo "Enabling git hooks."
-	git config --local hooks.enabled true
+if [ ! $( git config --local hooks.pre-commit.enabled ) ]; then
+	echo "Enabling git pre-commit hook."
+	git config --local hooks.pre-commit.enabled true
 fi
 
 
